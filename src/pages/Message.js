@@ -79,6 +79,7 @@ const Message = () => {
   const exportMessages = () => {
     if (messages !== null) {
       return messages.map((message, index) => (
+        const formatTime = `${message.timestamp.getFullYear()}/${message.timestamp.getMonth()+1}/${message.timestamp.getDate()} ${message.timestamp.getHours()}:${message.timestamp.getMinutes()}:${message.timestamp.getSeconds()}`
         <li className="list" key={index}>
           {/* <span>（ユーザー名）</span> */}
           <ListItem>
@@ -87,7 +88,6 @@ const Message = () => {
             </ListItemAvatar>
             <span className="p-chat__bubble">{message.content}</span>
             {/* ここで日時を表示させたいです */}
-            {/* <span>{message.timestamp}</span> */}
             <span>{formatTime}</span>
           </ListItem>
         </li>
