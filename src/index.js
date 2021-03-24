@@ -1,4 +1,3 @@
-import { style } from "@material-ui/system";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App.js";
