@@ -2,14 +2,23 @@
     list-style-type:none;
 }
 
+
+
 .p-chat {
-    background: #41B6E6;
+    background: white;
     border-radius: 4px;
-    color: #fff;
+    color: black;
     font-size: 14px;
     font-weight: 500;
     padding: .5rem;
     margin-right: 1rem;
-    max-width: 80%;
+    max-width: 70%;
     width: auto;
+}
+
+.date-and-time {
+    font-size: 10px;
+    display: inline-block;
+    height: 30px;
+    align-items: center;
 }

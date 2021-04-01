@@ -6,14 +6,21 @@ import TalkRoom from "./pages/TalkRoom";
 
 import "./styles/style.css";
 
+// styled-components用のreset.css
+import { Reset } from "styled-reset";
+
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={TalkRoomList} />
-        <Route exact path="/talkroom" component={TalkRoom} />
-      </Switch>
-    </Router>
+    <>
+      {/* reset.css */}
+      <Reset />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={TalkRoomList} />
+          <Route exact path="/talkroom" component={TalkRoom} />
+        </Switch>
+      </Router>
+    </>
   );
 };
 

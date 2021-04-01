@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import firebase from "../config/firebase";
 import Message from "./Message";
 
-// import moment from "moment";
-
 const Messages = () => {
   const [messages, setMessages] = useState(null);
   const [value, setValue] = useState("");
@@ -17,7 +15,10 @@ const Messages = () => {
         const messages = snapshot.docs.map((doc) => {
           return {
             content: doc.data().content,
-            timestamp: doc.data().timestamp.toDate(), //この部分でfirebaseより取得
+            // timestamp: doc.data().timestamp.toDate(), //この部分でfirebaseより取得
+            timestamp: doc
+              .data({ serverTimestamps: "estimate" })
+              .timestamp.toDate(), //serverTimestampが作成途中の時は見積もり時間を返してくれる
             docid: doc.id, //<- keyを設定するためにidを所得　あとあと削除機能等をつけようと思った時にも便利
           };
         });
@@ -54,7 +55,7 @@ const Messages = () => {
     <>
       <ul>
         {messages?.map((message) => {
-          // <- messagesの後の?はオプショナルチェイニングといってmessagesがnullやundefinedであったとしても許容してくれる
+          // <- messagesの後の?はオプショナルチェイニング演算子といってmessagesがnullやundefinedであったとしても許容してくれる
           return <Message message={message} key={message.docid} />; //messagesのひとつ一つの要素を使ってMessageコンポーネントを表示 propsにmessageを渡す。keyにはfirebaseのdocidをつかう
         })}
       </ul>
