@@ -6,7 +6,7 @@ import TalkRoom from "./pages/TalkRoom";
 
 import "./styles/style.css";
 
-// styled-components用のreset.css
+// styled-componentsのreset.css
 import { Reset } from "styled-reset";
 
 const App = () => {

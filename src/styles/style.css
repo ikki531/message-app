@@ -1,24 +1,41 @@
 .list {
-    list-style-type:none;
+    list-style-type: none;
+    display: flex;
+    background: skyblue;
+    padding: 15px;
+    margin: 30px;
+    border-radius: 4px;
+    text-align: left;
+    height: 100%;
 }
 
+.avaterbox {
+    /* display: flex; */
+    /* align-items: center; */
+    margin: 5px;
+}
 
+.chat {
+    display: flex;
+    align-items: center;
+    max-width: 70%;
+    margin: 5px;
+}
 
 .p-chat {
     background: white;
     border-radius: 4px;
     color: black;
-    font-size: 14px;
     font-weight: 500;
-    padding: .5rem;
-    margin-right: 1rem;
-    max-width: 70%;
+    padding: 0.5rem;
+    max-width: 100%;
     width: auto;
+    line-height: 25px;
 }
 
 .date-and-time {
-    font-size: 10px;
-    display: inline-block;
-    height: 30px;
-    align-items: center;
+    font-size: 12px;
+    display: flex;
+    margin: 5px;
+    align-items: flex-end;
 }

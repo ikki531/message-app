@@ -1,5 +1,3 @@
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 
 // import moment from "moment"; //moment.js使用時
@@ -14,27 +12,17 @@ const Message = ({ message }) => {
   return (
     <li className="list">
       {/* <span>（ユーザー名）</span> */}
-      <ListItem
-        className="list-item"
-        style={{
-          background: "gray",
-          padding: "15px",
-          margin: "30px",
-          borderRadius: "4px",
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
-        <ListItemAvatar>
-          <Avatar alt="icon" src="/static/images/avatar/1.jpg" />
-        </ListItemAvatar>
+      <div className="avaterbox">
+        <Avatar alt="icon" src="/static/images/avatar/1.jpg" />
+      </div>
+      <div className="chat">
         <span className="p-chat">{message.content}</span>
-        <div className="date-and-time">
-          <span>{formatTime}</span>
-        </div>
+      </div>
+      <div className="date-and-time">
+        <span>{formatTime}</span>
         {/* <span>{moment(message.timestamp).format("YYYY/MM/DD HH:mm")}</span> */}
         {/*moment.js使用時*/}
-      </ListItem>
+      </div>
     </li>
   );
 };

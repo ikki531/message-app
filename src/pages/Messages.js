@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import firebase from "../config/firebase";
 import Message from "./Message";
+import Pages from "./Pagination";
 
 const Messages = () => {
   const [messages, setMessages] = useState(null);
@@ -38,7 +39,7 @@ const Messages = () => {
     e.preventDefault();
     let valueReplace = value.replace(/\s+/g, "");
     if (valueReplace === "") {
-      alert("メッセージを入力してください。");
+      alert("コメントを入力してください。");
       return;
     }
     firebase.firestore().collection("messages").add({
@@ -63,11 +64,12 @@ const Messages = () => {
         <input
           type="text"
           value={value}
-          placeholder="メッセージを入力"
+          placeholder="コメントを入力"
           onChange={(e) => setValue(e.target.value)}
         />
         <button type="submit">送信</button>
       </form>
+      <Pages />
     </>
   );
 };
